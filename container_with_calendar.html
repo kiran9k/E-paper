@@ -1,0 +1,87 @@
+<html>
+<head>
+<script src="./jquery-1.6.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="calendar.css">
+
+<script>
+var current_page=<%=:pageno%>;
+var date=<%=:date%>;
+var max_page=<%=:maxpage%>
+//alert("<%=:pagefile%>");
+function prev()
+{
+	//pass the prev pageno
+	if(current_page-1>0)
+	{	
+	location.href = "http://192.168.12.77:8000" + "/epaper?date="+date+"&page="+(current_page-1);
+	}
+	else
+	{	
+	alert('You are viewing the first page !');
+	}
+}
+function next()
+{
+	//pass the next page no
+	if((current_page+1)>max_page)
+	{
+		alert("You are viewing the last page !");
+	}
+	else	
+	{
+	location.href = "http://192.168.12.77:8000" + "/epaper?date="+date+"&page="+(current_page+1);
+		//alert(current_page+1);
+	}	
+
+}
+function day(i)
+{
+	//alert(i);
+	location.href="http://192.168.12.77:8000"+"/epaper?date="+i+"&page=1";
+}
+</script>
+<body>
+<div id="day_buttons" align="center"> <table class="ds_box" cellpadding="0" cellspacing="0" id="ds_conclass" style="display: none;">
+<tr><td id="ds_calclass">
+</td></tr>
+</table>
+<script src="./calendar.js"></script>
+<div>
+<h3>Select Date:
+<img src="./calendar.jpg" onclick="ds_sh(this,'<%=:dateset%>');" name="date"/>
+</div></h3>
+</div>
+
+<table border=".1px">
+<tr>
+
+<td width ="150" align="center">
+<style scoped></style>
+<button id="prev" onclick="prev()">Previous</button>
+</td>
+
+<td height="800" width ="1000" align="center">
+<style scoped>body{background-image:none}</style>
+<!--<style scoped>-->
+<div id="dummy_body"></div>
+<!--</style>-->
+
+
+</td>
+
+<td width ="150"  align="center">
+
+<button id="prev"  onclick="next()" >Next</button>
+</td>
+
+</tr>
+</table>
+
+<script>
+$(function() {
+$("#dummy_body").load("<%=:pagefile%>");
+});
+//alert("done");</script>
+</body>
+
+</html>

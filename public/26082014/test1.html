@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Epaper - Demo</title>
+<link rel="stylesheet" href="styles/dhtmlwindow.css" type="text/css" />
+<style type="text/css">
+<!--
+body {
+background-color:#EDEDED;
+}
+td,tr,div{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+-->
+</style>
+
+<script type="text/javascript" src="javascript/loadxmldoc.js"></script>
+<script type="text/javascript" src="javascript/load.js"></script>
+<script type="text/javascript" src="javascript/main.js"></script>
+
+</head>
+<body><!-- onload="submitForm('mainXml.xml')">-->
+<div align="center">
+	<div id="container" style="width:860px;">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+		<td><img src="images/template1_03.jpg" width="860" height="35" alt="" /></td>
+	  </tr>
+	  <tr>
+	    <td background="images/template1_05.jpg">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+		    <td>
+				<span id="txtHint" style="height:25px; position:absolute; padding:3px;"></span>
+				<div id='userHints' style="background-color:#FFFF00; border:1px solid #FF0000; clear:both;"></div>
+				<select name="dt" id="dt" onchange="dtChange('date')" style="width:105px; visibility:hidden;"></select>  
+				<select name="edt" id="edt"  onchange="dtChange('edt')" style="width:150px; visibility:hidden;"></select>
+			</td>
+		    </tr>
+		  <tr>
+			<td>
+				<div id='container'>
+					<div align="left">
+					<div id='fullPageContainer' style="float:right; width:690px; margin-right:20px;">
+						<div id="leftcol">
+							<div id="leftToolbar">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								  <tr>
+									<td>
+									<div style="border:#CCCCCC 1px solid">
+										<div id="rightShift" style="width:20px; float: left; text-align:center; height:18px;">
+											<img id="leftShiftImg" src="images/btn_left.jpg" style="cursor:pointer;"/>						
+										</div>
+										<div id="leftShift" style="width:20px; float: right; text-align:center; height:18px;">
+											<img id="rightShiftImg" src="images/btn_right.jpg" style="cursor:pointer;"/>						
+										</div>
+										<div id="pageNum" style="text-align:center; border-left:#CCCCCC solid 1px; border-right:#CCCCCC solid 1px; margin-left:35px; margin-right:35px; height:18px;">
+											<div id="pnum"></div>
+										</div>
+									</div>
+									</td>
+								  </tr>
+								  <tr>
+								    <td>
+						<!--<div id='articleContainer' style="background-color:#FFFFFF; border:#333333 1px solid; position:absolute; height:495px; width:690px; z-index:101; margin-top:160px; display:none;">
+										<div id="articleToolBar" style="border-bottom:#333333 1px solid; padding-right:5px; text-align:right"><a onclick="closeArticle()" style="cursor:pointer;">X</a></div>
+										<div id="articleImg" style="overflow:auto; width:690px; height:480px;">
+											<img src="images/ajax-loader2.gif" name="articleImage" id="articleImage"  />
+										</div>
+							</div>-->
+									<div id='loadImg' style="position:relative;">
+										<img src="images/transparent.gif" width="690" name="fullPage" id="fullPage" style="cursor:pointer;" onload="clearUserHint()"/>
+									</div>
+									</td>
+							      </tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div id='thumbnailContainer' style="width:110px; margin-left:7px;  overflow:auto; border-right:#CCCCCC 1px solid; float:left; text-align:center;">
+						<div id="showDate" style="border:#CCCCCC 1px solid; height:20px;"></div>
+						<div id='thunbnail'></div>
+					</div>
+					</div>
+				</div>			
+			</td>
+		  </tr>
+		</table>
+		</td>
+      </tr>
+	  <tr>
+	    <td><img src="images/template1_07.jpg" width="860" height="50" alt="" /></td>
+      </tr>
+	</table>
+	</div>
+</div>
+<script type="text/javascript">
+submitForm('mainXml.xml');
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+function loadXMLDoc(dname)
+{
+var xmlDoct;
+// code for IE
+if (window.ActiveXObject)
+{
+xmlDoct=new ActiveXObject("Microsoft.XMLDOM");
+}
+// code for Mozilla, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+{
+xmlDoct=document.implementation.createDocument("","",null);
+}
+else
+{
+alert('Your browser cannot handle this script');
+}
+xmlDoct.async=false;
+xmlDoct.load(dname);
+return(xmlDoct);
+}
